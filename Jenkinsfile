@@ -1,6 +1,6 @@
 node('maven') {
       stage('Poll') {
-       git url:https://github.com/alv1981/simple-java-maven-app.git
+       git 'https://github.com/alv1981/simple-java-maven-app.git'
      }
       stage("build & SonarQube analysis") {
               //def scannerLoc = tool 'sonar-scanner';
