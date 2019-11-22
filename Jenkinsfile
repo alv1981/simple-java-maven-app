@@ -6,7 +6,7 @@ node('maven') {
               def scannerLoc = tool 'sonar-scanner1';
               withSonarQubeEnv('sonarqube-server') {
                     
-                    sh "${scannerLoc}/sonar-scanner"
+                    sh "${scannerLoc}/bin/sonar-scanner"
                 //   sh 'mvn  org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
              }
             
