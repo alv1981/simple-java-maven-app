@@ -1,4 +1,7 @@
-node('maven') {         
+node('maven') {
+      stage('Poll') {
+       checkout scm
+     }
       stage("build & SonarQube analysis") {
               //def scannerLoc = tool 'sonar-scanner';
               withSonarQubeEnv('sonarqube-server') {
