@@ -1,5 +1,4 @@
-pipeline {
-    agent {label 'maven'}          
+node('maven') {         
       stage("build & SonarQube analysis") {
               //def scannerLoc = tool 'sonar-scanner';
               withSonarQubeEnv('sonarqube-server') {
