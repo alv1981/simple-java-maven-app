@@ -20,7 +20,7 @@ pipeline {
         stage("build & SonarQube analysis") {
             steps {
               withSonarQubeEnv('sonarqube-server') {
-                sh 'mvn -e clean package sonar:sonar'
+                sh 'sh 'mvn -e org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar''
               }
             }
           }
