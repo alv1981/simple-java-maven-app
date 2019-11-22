@@ -18,9 +18,11 @@ pipeline {
             }
         }
         stage("build & SonarQube analysis") {
+            def scannerLoc = tool 'sonar-scanner';
             steps {
               withSonarQubeEnv('sonarqube-server') {
-                sh 'mvn -e org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
+                   sh "${scannerLoc}/sonar-scanner"
+                  // sh 'mvn -e org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
               }
             }
           }
