@@ -7,7 +7,7 @@ node('maven') {
               withSonarQubeEnv('sonarqube-server') {
                     
                  sh "${scannerLoc}/bin/sonar-scanner -Dsonar.projectKey=maven -Dsonar.projectName=maven -Dsonar.sources=. -Dsonar.projectBaseDir=/home/jenkins/workspace/linux_academi/Pipeline_maven"
-    }"  
+    }
                  //sh 'mvn  org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar -Dsonar.projectName=maven -Dsonar.projectKey=maven -Dsonar.projectVersion=$BUILD_NUMBER';  
              }
             
