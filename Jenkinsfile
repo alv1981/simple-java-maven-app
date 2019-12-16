@@ -8,7 +8,7 @@ pipeline {
          }
       }
       stage('build') {
-         agent maven
+         agent {label 'maven'}
          steps {
             def scannerLoc = tool 'sonar-scanner1';
               withSonarQubeEnv(credentialsId:'sonar_token',installationName:'sonarqube-server') {
