@@ -10,7 +10,7 @@ pipeline {
       stage('build') {
          agent {label 'maven'}
          options {
-               SkipDefaultCheckout()
+               skipDefaultCheckout()
          }
          steps {            
             withSonarQubeEnv(credentialsId:'sonar_token',installationName:'sonarqube-server') {
