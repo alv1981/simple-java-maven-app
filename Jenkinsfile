@@ -1,5 +1,5 @@
 pipeline {
-   agent any
+   agent {label 'maven'}
 
    stages {
       stage('gitpoll') {
@@ -8,7 +8,6 @@ pipeline {
          }
       }
       stage('build') {
-         agent {label 'maven'}
          options {
                skipDefaultCheckout()
          }
